@@ -1,7 +1,7 @@
 const {$} = require('@wdio/globals');
 
-const usernameTextBox = '#ap_email';
-const continueButton = "//input[@id='continue']";
+const usernameTextBox = '#ap_email_login';
+const continueButton = "//input[@aria-labelledby='continue-announce']";
 const passwordTextBox = '#ap_password';
 const signInButton = '#signInSubmit';
 

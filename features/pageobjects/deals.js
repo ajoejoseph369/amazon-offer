@@ -4,7 +4,9 @@ const firstDeal = '(//div[contains(@class,"GridRow-module")])[1]/div[contains(@c
 
 class Deals{
     async selectFirstDeal(){
-        await $(firstDeal).click();
+        await $(firstDeal).waitForDisplayed({timeout:6000});
+        if(await $(firstDeal).isDisplayed())
+            await $(firstDeal).click();
     }
 }
 

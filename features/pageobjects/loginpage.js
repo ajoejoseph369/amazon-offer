@@ -7,7 +7,9 @@ const signInButton = '#signInSubmit';
 
 class LoginPage{
     async enterUsername(username){
-        await $(usernameTextBox).setValue(username);
+        await $(usernameTextBox).waitForDisplayed();
+        if(await $(usernameTextBox).isDisplayed())
+            await $(usernameTextBox).setValue(username);
     }
 
     async clickContinue(){
@@ -15,7 +17,9 @@ class LoginPage{
     }
 
     async enterPassword(password){
-        await $(passwordTextBox).setValue(password);
+        await $(passwordTextBox).waitForDisplayed();
+        if(await $(passwordTextBox).isDisplayed())
+            await $(passwordTextBox).setValue(password);
     }
 
     async clickSignIn(){

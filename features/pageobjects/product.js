@@ -12,7 +12,9 @@ class Product{
     }
 
     async addToCart(){
-        await $(addToCartBtn).click();
+        await $(addToCartBtn).waitForDisplayed({timeout:6000});
+        if(await $(addToCartBtn).isDisplayed())
+            await $(addToCartBtn).click();
     }
 
     async viewCart(){

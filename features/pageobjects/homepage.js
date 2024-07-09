@@ -11,7 +11,9 @@ class HomePage{
     }
 
     async clickSignIn(){
-        await $(signInbtn).click();
+        await $(signInbtn).waitForDisplayed();
+        if(await $(signInbtn).isDisplayed())
+            await $(signInbtn).click();
     }
 
     async checkLoginRedirection(){
@@ -22,8 +24,9 @@ class HomePage{
     }
 
     async navigateToDealsPage(){
-        await $(todaysDeals).click();
-        await browser.pause(3000);
+        await $(todaysDeals).waitForDisplayed();
+        if(await $(todaysDeals).isDisplayed())
+            await $(todaysDeals).click();
     }
 
     async checkDealsRedirection(){
